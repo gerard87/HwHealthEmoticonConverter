@@ -1,39 +1,188 @@
 package com.gerard.hwhealthemoticonconverter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class StringUtils {
+    private static EmojiAsciiMap emojiAsciiMap = null;
+
     static String emoticonToTextParser(String text) {
-        return text
-                // Face smiling
-                .replace("\uD83D\uDE00", " :D ")
-                .replace("\uD83D\uDE03", " :D ")
-                .replace("\uD83D\uDE04", " :D ")
-                .replace("\uD83D\uDE01", " :D ")
-                .replace("\uD83D\uDE06", " :D ")
-                .replace("\uD83D\uDE05", " ´:D ")
-                .replace("\uD83E\uDD23", " :´D ")
-                .replace("\uD83D\uDE02", " :´D ")
-                .replace("\uD83D\uDE42", " :) ")
-                .replace("\uD83D\uDE43", " (: ")
-                .replace("\uD83D\uDE09", " ;) ")
-                .replace("\uD83D\uDE0A", " :) ")
-                .replace("\uD83D\uDE07", " 0:) ")
-
-                // Face affection
-
-                //Face tonge
-                .replace("\uD83D\uDE0B", " :P ")
-                .replace("\uD83D\uDE1B", " :P ")
-                .replace("\uD83D\uDE1C", " ;P ")
-                .replace("\uD83E\uDD2A", " :P ")
-                .replace("\uD83D\uDE1D", " :P ")
-                .replace("\uD83E\uDD11", " :P ")
-
-                // Face hand
-
-                // Hand fingers partial
-                .replace("\uD83D\uDC4C", " :ok: ")
-
-                // Hand finger closed
-                .replace("\uD83D\uDC4D", " :ok: ");
+        if (emojiAsciiMap == null) {
+            emojiAsciiMap = new EmojiAsciiMap();
+        }
+        for (Map.Entry entry : emojiAsciiMap.entrySet()) {
+            text = text.replaceAll((String) entry.getKey(), " " + entry.getValue() + " ");
+        }
+        text = text.trim().replaceAll("\\s{2,}", " ");
+        return text;
     }
+
+    private static class EmojiAsciiMap extends HashMap<String, String> {
+        EmojiAsciiMap() {
+            // Face smiling
+            put("😀", ":D");
+            put("😃", ":D");
+            put("😄", ":D");
+            put("😁", ":D");
+            put("😆", "XD");
+            put("😅", "´:D");
+            put("🤣", "X'D");
+            put("😂", "X'D");
+            put("🙂", ":)");
+            put("🙃", "(:");
+            put("😉", ";)");
+            put("😊", "X)");
+            put("😇", "0:)");
+            // Face affection
+            put("🥰", "<3");
+            put("😍","<3");
+            put("🤩", "=D");
+            put("😘", ";*");
+            put("😗", ":*");
+            put("☺", "X)");
+            put("☺️", "X)");
+            put("😚", ":*");
+            put("😙", ":*");
+            // Face tonge
+            put("😋", ":P");
+            put("😛", ":P");
+            put("😜", ";P");
+            put("🤪", "%P");
+            put("😝", "XP");
+            put("🤑", ":P");
+            // Face hand
+            put("🤗", ":3");
+            put("🤭", ":X");
+            put("🤫", ":shh:");
+            put("🤔", ":think:");
+            // Face neural skeptical
+            put("🤐", ":|");
+            put("🤨", ";|");
+            put("😐", ":|");
+            put("😑", ":|");
+            put("😶", ":|");
+            put("😏", "=)");
+            put("😒", "¬¬");
+            put("🙄", "=|");
+            put("😬", ":[]");
+            put("🤥", ":^/");
+
+            // Face sleepy
+            put("😌", ":)");
+            put("😔", ":|");
+            put("😪", "Zzz");
+            put("🤤", "zZz");
+            put("😴", "zzZ");
+            // Face unwell
+            put("😷", ":[]");
+            put("🤢", ":x");
+            put("🤮", ":vomit:");
+            put("🤧", ":sneeze:");
+            put("🥴", ":S");
+            put("😵", "XO");
+            put("🤯", "*:O");
+            // Face hat
+            put("🤠", ":D");
+            put("🥳", "<:)");
+            // Face glasses
+            put("😎", "8)");
+            put("🤓", "8D");
+            put("🧐", "8/");
+            // Face concerned
+            put("😕", ":/");
+            put("😟", ":(");
+            put("🙁", ":(");
+            put("☹️", ":(");
+            put("😢", ":'(");
+            put("😰", ":'O");
+            put("😯", ":o");
+            put("😮", ":O");
+            put("😲", ":o");
+            put("😦", ":O");
+            put("😨", ":O");
+            put("😧", ":O");
+            put("🥺", ":'|");
+            put("😳", "o_O");
+            put("😥", "´:(");
+            put("😭", ":'O");
+            put("😱", "=O");
+            put("😖", "XZ");
+            put("😣", "X(");
+            put("😞", ":(");
+            put("😩", "X(");
+            put("😫", "X(");
+            put("😓", "_:(");
+            // Face negative
+            put("😤", ">:(");
+            put("😡", ">:(");
+            put("😠", ">:(");
+            put("🤬", ">:(");
+            put("😈", ">:)");
+            put("👿", ">:(");
+            // Face costume
+            put("💩", ":shit:");
+            put("👹", ">:(");
+            put("👺", ">:(");
+            // Monkey face
+            put("🙈", "&)");
+            put("🙊", ":X");
+            // Emotion
+            put("💋", ":*");
+            put("❤️", "<3");
+            put("🧡", "<3");
+            put("💛", "<3");
+            put("💚", "<3");
+            put("💙", "<3");
+            put("💜", "<3");
+            put("🖤", "<3");
+            put("💖", "<3");
+            put("💗", "<3");
+            put("💓", "<3");
+            put("💞", "<3");
+            put("💕", "<3");
+            put("❣️", "<3");
+            put("💔", "</3");
+            put("💘", "</3");
+            put("💝", "</3");
+            put("💟", "<3");
+            // Hand fingers open
+            put("👋", ":hi:");
+            // Hand fingers partial
+            put("👌", ":ok:");
+            // Hand single finger
+            put("👆", "^");
+            put("👉", ">");
+            put("👈", "<");
+            // Hand finger closed
+            put("👍", ":up:");
+            put("👎", ":down:");
+            // Hands
+            put("👏", ":clap:");
+            // Body parts
+            put("💪", ":biceps:");
+            put("👄", ":*");
+            put("👅", ":P");
+            put("👀", "o_O");
+            put("👁", "o_O");
+            // Person
+            put("👨", ":man:");
+            put("👩", ":woman:");
+            // Family
+            put("💏", "<3");
+            put("💑", "<3");
+            // Arrow
+            put("🔝", ":top:");
+            // Light & video
+            put("🎥", ":camera:");
+            put("📷", ":photo:");
+            // Clothing
+            put("👓", "8)");
+            put("🕶", "8)");
+            // Office
+            put("📎", ":clip:");
+            // Sky & weather
+            put("🌟", "*");
+        }
+    }
+
 }

@@ -57,7 +57,7 @@ class StringUtils {
             put("🤔", ":think:");
             // Face neural skeptical
             put("🤐", ":|");
-            put("🤨", ";|");
+            put("🤨", "o_O");
             put("😐", ":|");
             put("😑", ":|");
             put("😶", ":|");
@@ -66,7 +66,6 @@ class StringUtils {
             put("🙄", "=|");
             put("😬", ":[]");
             put("🤥", ":^/");
-
             // Face sleepy
             put("😌", ":)");
             put("😔", ":|");
@@ -75,9 +74,12 @@ class StringUtils {
             put("😴", "zzZ");
             // Face unwell
             put("😷", ":[]");
+            put("🤒", ":sick:");
             put("🤢", ":x");
             put("🤮", ":vomit:");
             put("🤧", ":sneeze:");
+            put("🥵", ":hot:");
+            put("🥶", ":cold");
             put("🥴", ":S");
             put("😵", "XO");
             put("🤯", "*:O");
@@ -119,15 +121,35 @@ class StringUtils {
             put("🤬", ">:(");
             put("😈", ">:)");
             put("👿", ">:(");
+            put("💀", ":skull:");
+            put("☠", ":skull:");
             // Face costume
             put("💩", ":shit:");
+            put("🤡", ":clown:");
             put("👹", ">:(");
             put("👺", ">:(");
+            put("👻", ":ghost:");
+            put("👽", ":alien:");
+            put("👾", ":alien:");
+            put("🤖", ":robot:");
+            // Cat-face
+            put("😺", ":D");
+            put("😸", ":D");
+            put("😹", ":'D");
+            put("😻", "<3");
+            put("😼", "=)");
+            put("😽", ":*");
+            put("🙀", ":O");
+            put("😿", ":'(");
+            put("😾", ":(");
             // Monkey face
             put("🙈", "&)");
+            put("🙉", "XD");
             put("🙊", ":X");
             // Emotion
             put("💋", ":*");
+            put("💌", "<3");
+            put("❤", "<3");
             put("❤️", "<3");
             put("🧡", "<3");
             put("💛", "<3");
@@ -145,19 +167,43 @@ class StringUtils {
             put("💘", "</3");
             put("💝", "</3");
             put("💟", "<3");
+            put("💯", ":100:");
+            put("💣", ":bomb:");
+            put("💤", "zzz");
             // Hand fingers open
             put("👋", ":hi:");
+            put("🤚", ":hi:");
+            put("🖐", ":hi:");
+            put("✋", ":hi:");
+            put("🖖", ":hi:");
             // Hand fingers partial
             put("👌", ":ok:");
+            put("✌", ":victory:");
+            put("🤞", ":cross fingers:");
+            put("🤟", ":horns:");
+            put("🤘", ":horns:");
+            put("🤙", ":callme:");
             // Hand single finger
             put("👆", "^");
             put("👉", ">");
             put("👈", "<");
+            put("🖕", ":fy:");
+            put("👇", "\\/");
+            put("☝", ":me:");
             // Hand finger closed
-            put("👍", ":up:");
+            put("👍", ":ok:");
             put("👎", ":down:");
+            put("✊", ":fist:");
+            put("👊", ":fist:");
+            put("🤛", ":fist:");
+            put("🤜", ":fist:");
             // Hands
             put("👏", ":clap:");
+            put("🙌", ":palms");
+            put("👐", ":palms:");
+            put("🤲", ":palms:");
+            put("🤝", ":handshake:");
+            put("🙏", ":please:");
             // Body parts
             put("💪", ":biceps:");
             put("👄", ":*");

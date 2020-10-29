@@ -9,8 +9,8 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 public class NotificationCollect implements IXposedHookLoadPackage {
 
-    private boolean titleTextParser = false;
-    private boolean textTextParser = true;
+    private final boolean titleTextParser = false;
+    private final boolean textTextParser = true;
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {

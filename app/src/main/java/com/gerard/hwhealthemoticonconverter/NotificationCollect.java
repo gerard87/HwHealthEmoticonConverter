@@ -16,8 +16,8 @@ public class NotificationCollect implements IXposedHookLoadPackage {
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
         if (lpparam.packageName.equals("com.huawei.health")) {
             XposedHelpers.findAndHookMethod("com.huawei.bone.ui.setting.NotificationPushListener",
-                    lpparam.classLoader, "onNotificationSubPosted",
-                    Bundle.class, int.class, String.class, int.class, new XC_MethodHook() {
+                    lpparam.classLoader, "a",
+                    Bundle.class, new XC_MethodHook() {
                 @Override
                 protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                     Bundle bundle = (Bundle) param.args[0];
